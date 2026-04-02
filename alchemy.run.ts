@@ -21,9 +21,6 @@ export const worker = await Worker("api", {
   url: true,
   compatibilityDate: "2026-04-01",
   compatibilityFlags: ["nodejs_compat"],
-  limits: {
-    cpu_ms: 300_000,
-  },
   observability: {
     enabled: true,
   },

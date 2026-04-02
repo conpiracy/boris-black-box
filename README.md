@@ -7,10 +7,11 @@
 This repository currently contains:
 
 - a validated Cloudflare reference implementation
+- a live Cloudflare deployment
 - a proven MediaBunny-first packet-copy chunking path for the POC codec matrix
 - a Vercel migration handoff so another operator or coding agent can finish the production deployment on a different machine
 
-The Cloudflare deployment attempt reached the target account, but that account blocked bucket creation because R2 was not enabled. Instead of continuing that path, this repo is now prepared to be moved to GitHub and finished on Vercel.
+The Cloudflare account-side blockers have been cleared and the reference stack is now deployed at `https://boris-black-box-api-corp.conpiracy.workers.dev`. The remaining live validation blocker on this machine is provider credentials: there is no `OPENAI_API_KEY` available locally, so the health and manifest endpoints are verified online but the full transcription smoke run cannot be completed from this machine yet.
 
 ## What Is Already Proven
 
@@ -22,6 +23,12 @@ The Cloudflare deployment attempt reached the target account, but that account b
 - The narrow API contract, secret redaction, transcript merge, and artifact retrieval logic are implemented and tested locally.
 
 Evidence is in [docs/RESEARCH.md](/home/corp/dev/blackbox/docs/RESEARCH.md), [docs/COMPATIBILITY_FINDINGS.md](/home/corp/dev/blackbox/docs/COMPATIBILITY_FINDINGS.md), and [TESTPLAN.md](/home/corp/dev/blackbox/TESTPLAN.md).
+
+## Live Endpoint
+
+- base URL: `https://boris-black-box-api-corp.conpiracy.workers.dev`
+- health: `GET /healthz`
+- public API base: `/v1/...`
 
 ## Read This First
 

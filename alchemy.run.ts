@@ -19,6 +19,7 @@ const state = DurableObjectNamespace("boris-state", {
 export const worker = await Worker("api", {
   entrypoint: "./src/worker.ts",
   url: true,
+  domains: ["boris.lzy.dev"],
   compatibilityDate: "2026-04-01",
   compatibilityFlags: ["nodejs_compat"],
   observability: {
